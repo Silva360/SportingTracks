@@ -68,6 +68,8 @@ class ClubsController < ApplicationController
       @club = Club.find(params[:id])
       @activity = Activity.find(@club.activity_id)
       @place = Place.find(@club.place_id)
+      #devolve-nos a relacao que contem todos os UserClubs correspondentes ao clube com id = @club.id
+      @users_clubs = UserClub.where("club_id = #{params[:id]}")
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

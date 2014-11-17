@@ -1,34 +1,58 @@
 <!--<p id="notice"><%= notice %></p> -->
 
-<p>
-  <strong>Type:</strong>
-  <%= @club.club_type %>
-</p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>STrack|Clubs</title>
+  </head>
 
-<p>
-  <strong>Name:</strong>
-  <%= @club.name %>
-</p>
+  <body>
+    
+    <div class="main-list">
+      <p>
+        <strong>Type:</strong>
+        <%= @club.club_type %>
+      </p>
 
-<p>
-  <strong>Members:</strong>
-  <%= @club.members %>
-</p>
+      <p>
+        <strong>Name:</strong>
+        <%= @club.name %>
+      </p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @club.description %>
-</p>
+      <p>
+        <strong>Members:</strong>
+        <%= @club.members %>
+      </p>
 
-<p>
-  <strong>Activity:</strong>
-  <%= @activity.activity_type %>
-</p>
+      <p>
+        <strong>Description:</strong>
+        <%= @club.description %>
+      </p>
 
-<p>
-  <strong>Place:</strong>
-  <%= @place.district %>
-</p>
+      <p>
+        <strong>Activity:</strong>
+        <%= @activity.activity_type %>
+      </p>
 
-<%= link_to 'Edit', edit_club_path(@club) %> |
-<%= link_to 'Back', clubs_path %>
+      <p>
+        <strong>Place:</strong>
+        <%= @place.district %>
+      </p>
+
+      <%= link_to 'Edit', edit_club_path(@club) %> |
+      <%= link_to 'Back', clubs_path %>
+    </div>
+
+    <!-- se estiver a ver um clube e nao pertencer, entao posso querer juntar-me a ele -->
+    <% if not (@users_clubs.where("user_id = #{current_user.id}").any?) %>
+
+      <div class="join-club">
+        <button> 
+          <%= link_to "Join Club", user_clubs_path(:user_club => {:user_id => current_user.id, :club_id => @club.id, :join_date => Date.current}), :method => :post %>
+        </button>
+      </div>
+
+    <% end %>
+
+  </body>
+</html>

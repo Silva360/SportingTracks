@@ -1,18 +1,34 @@
-<p>
-  <strong>User:</strong>
-  <%= link_to "#{@user.name}", {:controller => "dashboard"}%>
-</p>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>STrack | My Clubs</title>
+</head>
+<body>
 
-<p>
-  <strong>Club:</strong>
-  <%= link_to "#{@club.name}", {:controller => "clubs", :action => "show", :id => @club.id }%>
+	<div class="main-list">
+		<p>
+		  <strong>User:</strong>
+		  <%= link_to "#{@user.name}", {:controller => "dashboard"}%>
+		</p>
 
-</p>
+		<p>
+		  <strong>Club:</strong>
+		  <%= link_to "#{@club.name}", {:controller => "clubs", :action => "show", :id => @club.id }%>
 
-<p>
-  <strong>Join date:</strong>
-  <%= @user_club.join_date %>
-</p>
+		</p>
 
-<%= link_to 'Edit', edit_user_club_path(@user_club) %> |
-<%= link_to 'Back', user_clubs_path %>
+		<p>
+		  <strong>Join date:</strong>
+		  <%= @user_club.join_date %>
+		</p>
+
+		<%= link_to 'Edit', edit_user_club_path(@user_club) %> |
+		<%= link_to 'Back', user_clubs_path %>
+	</div>
+
+	<div class="create">
+		
+	</div>
+
+</body>
+</html>
