@@ -4,7 +4,8 @@ class UserClubsController < ApplicationController
   # GET /user_clubs
   # GET /user_clubs.json
   def index
-    @user_clubs = UserClub.all
+    #apenas listar todos os clubes do user logado
+    @user_clubs = UserClub.where("user_id = #{current_user.id}")
   end
 
   # GET /user_clubs/1
@@ -65,6 +66,8 @@ class UserClubsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_user_club
       @user_club = UserClub.find(params[:id])
+      @user = User.find(@user_club.user_id)
+      @club = Club.find(@user_club.club_id)
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

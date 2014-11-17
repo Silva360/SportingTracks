@@ -12,8 +12,15 @@
   		<nav>
   			<div class="inside-content">
   				<div class="app-logo">
-  					<a id="sport" href="/"><img src="http://www.shawncullum.com/wp-content/uploads/2012/04/LogoLion.png" title="Sporting Track" 
+
+          <% if user_signed_in? %>
+            <a id="sport" href="/dashboard"><img src="http://www.shawncullum.com/wp-content/uploads/2012/04/LogoLion.png" title="Sporting Track" 
               width="75" height="75" border="0"></a>
+          <% else %>
+            <a id="sport" href="/"><img src="http://www.shawncullum.com/wp-content/uploads/2012/04/LogoLion.png" title="Sporting Track" 
+              width="75" height="75" border="0"></a>
+          <% end %>
+  					
   				</div>
 
   				<div class="app-search">
@@ -50,10 +57,10 @@
                   <ul>
                     <li><a href="/dashboard">Feed Actividade</a></li>
                     <li><a href="#">My friends</a></li>
-                    <li><a href="#">Op3</a></li>
+                    <li><a href="/user_clubs">My clubs</a></li>
                   </ul>
                 </li>
-                <li><a href="#">Trainning</a>
+                <li><a href="/activities">Trainning</a>
                   <ul>
                     <li><a href="#">Register Trainning</a></li>
                     <li><a href="#">Calendar</a></li>
@@ -64,7 +71,7 @@
                   <ul>
                     <li><a href="#">Search Activities</a></li>
                     <li><a href="#">Search Athletes</a></li>
-                    <li><a href="#">Search Clubs</a></li>
+                    <li><a href="/clubs">Search Clubs</a></li>
                   </ul>
                 </li>
               </ul>
@@ -92,12 +99,9 @@
               <ul>
                 <li><a href="#">Settings</a>
                   <ul>
-                    <li> 
-                      <%= link_to 'My Profile', {:controller => 'activities', :action => 'show', 
-                                                  :id => "1"} %>
-                    </li>
-                    <li><a href="#">Request Friendship</a></li>
-                    <li><a href="#">Account Settings</a></li>
+                    <li>User Settings</li>
+                    <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+                    <li><%= link_to 'Logout', destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
                   </ul>
                 </li>
               </ul>

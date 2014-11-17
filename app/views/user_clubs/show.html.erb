@@ -1,13 +1,12 @@
-
-
 <p>
   <strong>User:</strong>
-  <%= @user_club.user_id %>
+  <%= link_to "#{@user.name}", {:controller => "dashboard"}%>
 </p>
 
 <p>
   <strong>Club:</strong>
-  <%= @user_club.club_id %>
+  <%= link_to "#{@club.name}", {:controller => "clubs", :action => "show", :id => @club.id }%>
+
 </p>
 
 <p>
