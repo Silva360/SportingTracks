@@ -4,7 +4,8 @@ class ClubsController < ApplicationController
   # GET /clubs
   # GET /clubs.json
   def index
-    @clubs = Club.all
+    @clubs = Club.joins(:place).all
+
   end
 
   # GET /clubs/1
@@ -66,7 +67,6 @@ class ClubsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_club
       @club = Club.find(params[:id])
-      @activity = Activity.find(@club.activity_id)
       @place = Place.find(@club.place_id)
       #devolve-nos a relacao que contem todos os UserClubs correspondentes ao clube com id = @club.id
       @users_clubs = UserClub.where("club_id = #{params[:id]}")
@@ -74,6 +74,6 @@ class ClubsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def club_params
-      params.require(:club).permit(:club_type, :name, :members, :description, :activity_id, :place_id)
+      params.require(:club).permit(:club_type, :name, :members, :description, :sport, :place_id)
     end
 end

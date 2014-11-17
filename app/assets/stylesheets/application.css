@@ -218,3 +218,7 @@
       text-decoration: none;
 
     }
+
+    .log {
+      float: right;
+    }

@@ -20,16 +20,13 @@
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :members %><br>
-    <%= f.number_field :members %>
+    <%= f.label :sport %><br>
+    <%= f.select(:sport, options_for_select([["Cycling", "Cycling"], ["Running", "Running"], 
+                                                        ["Swimming", "Swimming"], ["Gymn", "Gymn"]])) %>
   </div>
   <div class="field">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :activity_id %><br>
-    <%= select_tag 'club[activity_id]', options_from_collection_for_select(Activity.all, 'id', 'activity_type') %>
   </div>
   <div class="field">
     <%= f.label :place_id %><br>

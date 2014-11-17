@@ -8,12 +8,28 @@
 
 </head>
   <body>
+
+    <p class="log">
+      <% if user_signed_in? %>
+        Logged in as <strong><%= current_user.email %></strong>.
+      <% end %>
+    </p>
+
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
   	<header class="header">
   		<nav>
   			<div class="inside-content">
   				<div class="app-logo">
 
           <% if user_signed_in? %>
+
             <a id="sport" href="/dashboard"><img src="http://www.shawncullum.com/wp-content/uploads/2012/04/LogoLion.png" title="Sporting Track" 
               width="75" height="75" border="0"></a>
           <% else %>
