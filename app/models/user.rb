@@ -15,5 +15,8 @@ class User < ActiveRecord::Base
 	has_many :clubs, :through => :user_clubs
 	
 	has_many :activities
+	
+	validates :name, :presence => true
+	validates :birth_date, :presence => true
 
 end

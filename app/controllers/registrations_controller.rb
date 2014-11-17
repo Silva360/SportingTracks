@@ -17,5 +17,6 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def index
+    @users = User.all
   end
 end

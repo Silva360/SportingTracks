@@ -46,16 +46,10 @@
           </thead>
 
           <tbody>
-            <% @activities.each do |activity| %>
+            <% @user.each do |user| %>
               <tr>
-                <td><%= activity.activity_type %></td>
-                <td><%= activity.title %></td>
-                <td><%= activity.date %></td>
-                <td><%= activity.start %></td>
-                <td><%= activity.duration %></td>
-                <td><%= link_to 'Show', activity %></td>
-                <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
-                <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                <td><%= user.name %></td>
+                <td><%= user.birth_date %></td>
               </tr>
             <% end %>
           </tbody>
@@ -64,19 +58,6 @@
         <br>
 
     </div>
-
-      <div class="list-params">
-
-        <head>List Activities by:</head>
-
-        <div class="params">
-          
-        </div>
-        
-          
-      </div>
-
-    <%= link_to 'New Activity', new_activity_path %>
 
   </div>
 

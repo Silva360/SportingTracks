@@ -4,4 +4,9 @@ class Club < ActiveRecord::Base
 	has_many :users, :through => :user_clubs
 
 	belongs_to :place
+
+	validates :club_type, :presence => true
+	validates :name, :presence => true
+
+
 end
