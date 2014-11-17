@@ -1,0 +1,23 @@
+<!--<p id="notice"><%= notice %></p> -->
+<p>
+  <strong>Country:</strong>
+  <%= @place.country %>
+</p>
+
+<p>
+  <strong>District:</strong>
+  <%= @place.district %>
+</p>
+
+<p>
+  <strong>County:</strong>
+  <%= @place.county %>
+</p>
+
+<p>
+  <strong>Locality:</strong>
+  <%= @place.locality %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>

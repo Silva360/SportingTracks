@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Activities</title>
+
+  <style>
+
+  .list-params {
+    border: solid 1px;
+    float: right;
+    margin-right: 500px;
+    margin-top: 0px;
+  }
+
+  .list-all {
+    width: 800px;
+
+  }
+
+  .params {
+    border: solid 1px;
+  }
+
+
+
+  </style>
+
+
+</head>
+
+<body>
+
+  <div class="main-container">
+
+    <div class="list-all">
+      
+      <h1>All Activities</h1>
+
+        <table>
+          <thead>
+            <tr>
+              <th> <%= sortable "activity_ype" %></th>
+              <th> <%= sortable "title" %></th>
+              <th> <%= sortable "date" %></th>
+              <th> <%= sortable "start" %></th>
+              <th> <%= sortable "duration" %></th>
+              <th colspan="3"></th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <% @activities.each do |activity| %>
+              <tr>
+                <td><%= activity.activity_type %></td>
+                <td><%= activity.title %></td>
+                <td><%= activity.date %></td>
+                <td><%= activity.start %></td>
+                <td><%= activity.duration %></td>
+                <td><%= link_to 'Show', activity %></td>
+                <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+                <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+
+        <br>
+
+    </div>
+
+      <div class="list-params">
+
+        <head>List Activities by:</head>
+
+        <div class="params">
+          <ul>
+            <li><%= select_tag "year", options_for_select((2014, Time.now.year)) %>
+              <% %>
+
+            </li>
+            <li><%= select_tag "year", options_for_select((2014, Time.now.year)) %></li>
+            <li><%= select_tag "year", options_for_select((2014, Time.now.year)) %></li>
+          </ul>
+          
+
+
+
+        </div>
+        
+          
+      </div>
+
+    <%= link_to 'New Activity', new_activity_path %>
+
+  </div>
+
+</body>
+</html>
+
+
+
+

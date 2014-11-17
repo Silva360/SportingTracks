@@ -1,0 +1,19 @@
+
+
+<p>
+  <strong>User:</strong>
+  <%= @user_club.user_id %>
+</p>
+
+<p>
+  <strong>Club:</strong>
+  <%= @user_club.club_id %>
+</p>
+
+<p>
+  <strong>Join date:</strong>
+  <%= @user_club.join_date %>
+</p>
+
+<%= link_to 'Edit', edit_user_club_path(@user_club) %> |
+<%= link_to 'Back', user_clubs_path %>

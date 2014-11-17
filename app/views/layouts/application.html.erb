@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sporting Track</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+  <body>
+  	<header class="header">
+  		<nav>
+  			<div class="inside-content">
+  				<div class="app-logo">
+  					<a id="sport" href="/"><img src="http://www.shawncullum.com/wp-content/uploads/2012/04/LogoLion.png" title="Sporting Track" 
+              width="75" height="75" border="0"></a>
+  				</div>
+
+  				<div class="app-search">
+
+          <div class="select-box">
+            <select class="style-all">
+              <option value="activities">Activities</option>
+              <option value="athletes">Athletes</option>
+              <option value="clubs">Clubs</option>
+            </select>            
+          </div>
+
+            <div class="inner">
+              <form method="get" action="">
+              <table cellpadding="0px" cellspacing="0px">
+                <tr>
+                  <td class"search-style"> 
+                    <input class="text-style" type="text" name="" style="">
+                  </td>
+
+                  <td class="search-style2"> 
+                    <input class="input-style" type="submit" value="">
+                  </td>
+                </tr>
+              </table>
+            </form>
+            </div>	
+  				</div>
+
+  				<div class="user-ops">
+            <nav>
+              <ul>
+                <li><a href="/dashboard">Dashboard</a>
+                  <ul>
+                    <li><a href="/dashboard">Feed Actividade</a></li>
+                    <li><a href="#">My friends</a></li>
+                    <li><a href="#">Op3</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Trainning</a>
+                  <ul>
+                    <li><a href="#">Register Trainning</a></li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="/activities">My Activities</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Explore</a>
+                  <ul>
+                    <li><a href="#">Search Activities</a></li>
+                    <li><a href="#">Search Athletes</a></li>
+                    <li><a href="#">Search Clubs</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+  				</div>
+
+
+          <div class="user-ops">
+            <nav>
+              <ul>
+                <li>Upload
+                  <ul>
+                    <li><a href="#">Device</a></li>
+                    <li><a href="/activities/new">Manual</a></li>
+                    <li><a href="#">Computer</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+  					
+          <div class="user-ops">
+
+            <nav>
+              <ul>
+                <li><a href="#">Settings</a>
+                  <ul>
+                    <li> 
+                      <%= link_to 'My Profile', {:controller => 'activities', :action => 'show', 
+                                                  :id => "1"} %>
+                    </li>
+                    <li><a href="#">Request Friendship</a></li>
+                    <li><a href="#">Account Settings</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+  			</div>
+  		</nav>
+  	</header>
+
+    <div>
+        
+        
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+
+        <%= yield %>
+
+
+
+    </div>
+
+  	<footer class="footer">
+  		<div class="footer-all">
+
+  			@ Sporting Track 2014, Lisboa, Portugal
+
+  		</div>
+  	</footer>
+
+  </body>
+</html>

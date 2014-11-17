@@ -1,0 +1,220 @@
+/*
+ *= require_tree .
+ *= require_self 
+*/
+
+ div {padding: 10px; margin: 0px;}
+
+    .header {
+      border-bottom: 1px solid #e5e5e5;
+      width: 100%;
+      margin: 0px;
+    }
+
+  	.inside-content {
+  		padding-bottom: 140px;
+      margin-top: 0px;
+  	}
+
+  	.app-logo {
+  		float: left;
+  		padding: 5px;
+  		margin-top: 5px;
+  		margin-right: 100px;
+      border: none;
+      	
+  	}
+
+  	.inside-content .app-logo a#sport {
+  		display: block;
+  	}
+
+  	a#sport:hover {
+  		background-color: white;
+  	}
+
+    .select-box {
+      float: left;
+      margin: 0;
+      margin-top: 7px;
+    }
+
+  	.app-search {
+      border: none;
+  		float: left;
+  		padding: 5px;
+  		margin-top: 5px;
+      margin-right: 200px;
+
+  	}
+
+  	.user-ops {
+      border: none;
+  		display: inline;
+  		float: left;
+  		padding: 3px;
+  		margin-top: 10px;
+      margin-left: 40px;
+  		
+  	}
+
+  	.user-ops nav ul ul {
+      display: none;
+      background: #5f6975; border-radius: 0px; padding: 0;
+      position: absolute; top: 94%;
+    }
+
+    .user-ops nav ul li:hover > ul{
+      display: block;
+      list-style: none;
+      float: left;
+      padding: 2px;
+      margin: 5px;
+      
+    }
+
+    .user-ops nav ul ul ul {
+      position: absolute; left: 94%; top:0;
+    }
+
+    .user-ops nav ul ul li {
+      float: none; 
+      border-top: 1px solid #6b727c;
+      border-bottom: 1px solid #575f6a;
+      position: relative;
+    }
+
+    .user-ops nav ul {
+      background-color: #efefef; 
+      background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+      background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+      background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+      box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+      padding: 0 20px;
+      border-radius: 10px;  
+      list-style: none;
+      position: relative;
+      display: inline-table;
+
+    }
+
+    .user-ops nav ul:after{
+      content: ""; clear: both; display: block;
+    }
+
+    .user-ops nav ul li {
+      float: left;
+    }
+
+    .user-ops nav ul li:hover {
+      background-color: #4b545f;
+    }
+
+    .user-ops nav ul li:hover a{
+      color: #fff;
+    }
+
+    .user-ops nav ul li a {
+      display: block; padding: 25px 40px;
+      color: #757575; text-decoration: none;
+
+    }
+
+    .user-ops nav ul ul li a {
+      padding: 15px 40px;
+      color: #fff;
+    }
+
+    .user-ops nav ul ul li a:hover {
+        background-color: #F0F0F0;
+      }
+
+    .user-ops nav ul li a:hover {
+        color: orange;
+        background-color: #F0F0F0;
+    }
+
+  
+    .user-nav {
+      float: right;
+      padding: 5px;
+      margin-top: 10px;
+      margin-right: 200px;
+      border: none;
+    }
+
+    .ops-nav {
+      float: right;
+      padding: 5px;
+      margin-top: 10px;
+    }
+
+  	.notification {
+  		margin-left: 600px;
+  		margin-top: 0px;
+  		padding: 0px;
+  		width: 500px;
+  	}
+
+    .search-style {
+      border-style:solid;
+      border-color:#CCCCCC;
+      border-width:1px;
+    }
+
+    .search-style2 {
+      border-style:solid;
+      border-color:#CCCCCC;
+      border-width:0px;
+    }
+
+    .text-style {
+      width:100px; 
+      border:1px solid; 
+      height:17px; 
+      padding:0px 3px; 
+      position:relative;
+
+    }
+
+    .input-style {
+      border-style: none; 
+      background: url(https://cdn3.iconfinder.com/data/icons/woothemesiconset/32/search_button_green.png) no-repeat; 
+      width: 30px; 
+      height: 30px;
+    }
+
+    .opt-choose {
+      float: left;
+      padding: 3px;
+      margin-top: 16px;
+      margin-left: 30px;
+
+    }
+
+    .inner {
+      float: right;
+      margin: 0px;
+      border: none;
+    }
+
+    .footer {
+      border-top: solid 1px #e5e5e5;
+      float: right;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    .style-all {
+      background-color: #efefef; 
+      background: linear-gradient(top, #efefef 0%, #bbbbbb 100%);  
+      background: -moz-linear-gradient(top, #efefef 0%, #bbbbbb 100%); 
+      background: -webkit-linear-gradient(top, #efefef 0%,#bbbbbb 100%); 
+      box-shadow: 0px 0px 9px rgba(0,0,0,0.15);
+      padding: 0 20px;
+      border-radius: 10px;
+      color: #757575;
+      text-decoration: none;
+
+    }
